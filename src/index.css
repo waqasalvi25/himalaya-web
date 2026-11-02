@@ -345,6 +345,8 @@
   display: none;
 }
 
+
+
 .him-hero {
   position: relative;
   height: clamp(324px, 62vw, 860px);
