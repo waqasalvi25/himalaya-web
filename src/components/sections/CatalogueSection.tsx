@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
+import { useRise } from "@/components/motion/Reveal";
 import { images } from "@/lib/images";
 
 export function CatalogueSection() {
+  const banner = useRise<HTMLDivElement>();
+
   return (
     <section className="him-section him-section-tight !pb-0">
       <div className="him-container">
-        <div className="him-catalogue">
+        <div ref={banner.ref} className={`him-catalogue ${banner.className}`}>
           <img
             src={images.catalogueLeft}
             alt=""

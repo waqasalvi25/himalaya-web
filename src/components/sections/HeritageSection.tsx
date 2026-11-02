@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useRise } from "@/components/motion/Reveal";
 import { images } from "@/lib/images";
 
 const features = [
@@ -21,9 +22,12 @@ const features = [
 ];
 
 export function HeritageSection() {
+  const grid = useRise<HTMLDivElement>();
+  const points = useRise<HTMLUListElement>();
+
   return (
     <section className="him-section him-heritage">
-      <div className="him-container him-heritage-grid">
+      <div ref={grid.ref} className={`him-container him-heritage-grid ${grid.className}`}>
         <div>
           <h2 className="him-display">
             Pure by Nature.
@@ -33,7 +37,7 @@ export function HeritageSection() {
             Sourced from the ancient Himalayan Salt Range of Pakistan, our Himalayan Pink Salt is a naturally occurring mineral-rich salt, valued for its distinctive pink hues, authentic origin, and exceptional versatility. Carefully extracted and processed to preserve its natural character, it brings the purity of the mountains to kitchens and industries worldwide.
           </p>
 
-          <ul className="him-feature-grid">
+          <ul ref={points.ref} className={`him-feature-grid ${points.className}`}>
             {features.map((feature) => (
               <li key={feature.title}>
                 <h3 className="him-playfair">{feature.title}</h3>
@@ -43,7 +47,7 @@ export function HeritageSection() {
           </ul>
 
           <Link to="/about" className="him-btn him-btn-blush">
-            Explore
+            Read More
           </Link>
         </div>
 

@@ -1,3 +1,5 @@
+import { useRise } from "@/components/motion/Reveal";
+
 const reasons = [
   {
     num: "01",
@@ -22,10 +24,13 @@ const reasons = [
 ];
 
 export function WhyChooseSection() {
+  const head = useRise<HTMLDivElement>();
+  const cards = useRise<HTMLDivElement>();
+
   return (
     <section className="him-section him-why">
       <div className="him-container">
-        <div className="him-why-head">
+        <div ref={head.ref} className={`him-why-head ${head.className}`}>
           <h2 className="him-display him-display-inline">
             Why Choose <em>Himalaya Salt</em>
           </h2>
@@ -35,7 +40,7 @@ export function WhyChooseSection() {
           </p>
         </div>
 
-        <div className="him-why-grid">
+        <div ref={cards.ref} className={`him-why-grid ${cards.className}`}>
           {reasons.map((reason) => (
             <article key={reason.num} className="him-why-card">
               <span>{reason.num}</span>

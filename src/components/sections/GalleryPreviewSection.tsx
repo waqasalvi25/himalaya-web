@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useRise } from "@/components/motion/Reveal";
 import { images } from "@/lib/images";
 
 const shots = [
@@ -10,19 +11,22 @@ const shots = [
 ];
 
 export function GalleryPreviewSection() {
+  const head = useRise<HTMLDivElement>();
+  const grid = useRise<HTMLDivElement>();
+
   return (
     <section className="him-section him-gallery">
       <div className="him-container">
-        <div className="him-section-head">
+        <div ref={head.ref} className={`him-section-head ${head.className}`}>
           <h2 className="him-display him-display-inline">
-            Our <em>Gallery</em>
+            Our <em className="normal-em">Gallery</em>
           </h2>
           <Link to="/gallery" className="him-btn him-btn-accent">
             View All
           </Link>
         </div>
 
-        <div className="him-gallery-grid">
+        <div ref={grid.ref} className={`him-gallery-grid ${grid.className}`}>
           {shots.map((shot) => (
             <figure key={shot.alt} className={shot.tall ? "is-tall" : undefined}>
               <img src={shot.src} alt={shot.alt} />

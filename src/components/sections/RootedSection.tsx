@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import { useRise } from "@/components/motion/Reveal";
 import { images } from "@/lib/images";
 
 export function RootedSection() {
+  const block = useRise<HTMLElement>();
+
   return (
-    <section className="him-rooted">
+    <section ref={block.ref} className={`him-rooted ${block.className}`}>
       <div className="him-container him-rooted-copy">
         <h2 className="him-display">
           Rooted in Nature.
@@ -20,7 +23,7 @@ export function RootedSection() {
         </Link>
       </div>
 
-      <div className="him-container">
+      <div className="him-container3 mt-28">
         <img
           src={images.rooted}
           alt="Himalayan salt pouches, bricks, and a salt lamp"

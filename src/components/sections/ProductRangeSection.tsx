@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
+import { useRise } from "@/components/motion/Reveal";
 import { images } from "@/lib/images";
 
 const products = [
@@ -30,10 +31,13 @@ const products = [
 ];
 
 export function ProductRangeSection() {
+  const head = useRise<HTMLDivElement>();
+  const cards = useRise<HTMLDivElement>();
+
   return (
     <section className="him-section him-range">
       <div className="him-container">
-        <div className="him-section-head">
+        <div ref={head.ref} className={`him-section-head ${head.className}`}>
           <div>
             <h2 className="him-display him-display-inline">
               Our Product <em className="normal-em">Range</em>
@@ -45,7 +49,7 @@ export function ProductRangeSection() {
           </Link>
         </div>
 
-        <div className="him-product-grid">
+        <div ref={cards.ref} className={`him-product-grid ${cards.className}`}>
           {products.map((product) => (
             <article key={product.href} className="him-product-card">
               <img src={product.image} alt={product.alt} />

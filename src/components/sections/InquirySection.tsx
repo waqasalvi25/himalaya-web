@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import { useRise } from "@/components/motion/Reveal";
 import { images } from "@/lib/images";
 
 type FormState = {
@@ -10,6 +11,7 @@ type FormState = {
 const empty: FormState = { name: "", email: "", phone: "" };
 
 export function InquirySection() {
+  const panel = useRise<HTMLDivElement>(true);
   const [values, setValues] = useState<FormState>(empty);
   const [error, setError] = useState("");
   const [sent, setSent] = useState(false);
@@ -34,7 +36,7 @@ export function InquirySection() {
   return (
     <section className="him-inquiry-wrap" id="quote">
       <div className="him-container2">
-        <div className="him-inquiry">
+        <div ref={panel.ref} className={`him-inquiry ${panel.className}`}>
           <img src={images.mountains} alt="" className="him-inquiry-bg" />
           <div className="him-inquiry-shade" />
           <div className="him-inquiry-copy">

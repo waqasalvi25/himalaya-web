@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useRise } from "@/components/motion/Reveal";
 import { images } from "@/lib/images";
 
 const points = [
@@ -13,10 +14,12 @@ const points = [
 ];
 
 export function WhiteLabelSection() {
+  const panel = useRise<HTMLDivElement>();
+
   return (
     <section className="him-section him-section-tight !pb-0">
       <div className="him-container">
-        <div className="him-brand-panel">
+        <div ref={panel.ref} className={`him-brand-panel ${panel.className}`}>
           <img
             src={images.yourBrand}
             alt="Himalayan salt pouches and a tube on a shelf"

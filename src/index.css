@@ -84,7 +84,7 @@
   margin: 0;
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: clamp(2.15rem, 4vw, 3.35rem);
+  font-size: clamp(2.15rem, 4vw, 4.3rem);
   line-height: 1.02;
   letter-spacing: -0.02em;
   color: var(--him-ink);
@@ -118,11 +118,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 42px;
+  min-height: 56px;
+  min-width: 204px;
   padding: 0 18px;
-  border-radius: 6px;
-  border: 1px solid transparent;
-  font-size: 14px;
+  border-radius: 7px;
+  border: 1.5px solid #DF775D;
+  font-size: 18px;
   font-weight: 500;
   line-height: 1;
   cursor: pointer;
@@ -446,6 +447,51 @@ html:not(.him-preloading) .him-hero-title {
   }
 }
 
+.him-rise > *,
+.him-rise-self {
+  opacity: 0;
+  transform: translateY(34px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 0.8, 0.28, 1),
+    transform 0.95s cubic-bezier(0.22, 0.8, 0.28, 1);
+}
+
+.him-rise.is-in > *,
+.him-rise-self.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.him-rise.is-in > *:nth-child(2) {
+  transition-delay: 0.12s;
+}
+
+.him-rise.is-in > *:nth-child(3) {
+  transition-delay: 0.22s;
+}
+
+.him-rise.is-in > *:nth-child(4) {
+  transition-delay: 0.32s;
+}
+
+.him-rise.is-in > *:nth-child(5) {
+  transition-delay: 0.42s;
+}
+
+.him-rise:not(.is-in) > *,
+.him-rise-self:not(.is-in) {
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .him-rise > *,
+  .him-rise-self {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .him-heritage-grid {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
@@ -527,7 +573,7 @@ html:not(.him-preloading) .him-hero-title {
 
 .him-rooted .him-display {
   font-weight: 600;
-  font-size: clamp(2.45rem, 4.3vw, 3.55rem);
+  font-size: clamp(2.45rem, 4.3vw, 4.3rem);
   line-height: 1.15;
   letter-spacing: -0.02em;
   color: #1c2830;
@@ -558,16 +604,22 @@ html:not(.him-preloading) .him-hero-title {
 }
 
 .him-btn-read {
-  min-height: 38px;
+  min-height: 56px;
+  min-width: 204px;
   padding: 0 18px;
-  background: transparent;
+  background: var(--him-blush);
   color: #2c3942;
-  border-color: #e7b4a2;
+  border-color: 1.5px solid #DF775D;
   border-radius: 6px;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .him-btn-read:hover {
@@ -575,6 +627,33 @@ html:not(.him-preloading) .him-hero-title {
   border-color: #d98974;
   color: var(--him-accent-deep);
 }
+
+
+/* .him-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  min-width: 204px;
+  padding: 0 18px;
+  border-radius: 7px;
+  border: 1.5px solid #DF775D;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.him-btn:hover {
+  transform: translateY(-1px);
+} */
+
+
 
 .him-rooted-photo {
   /* width: min(100%, 1180px); */
@@ -677,7 +756,7 @@ html:not(.him-preloading) .him-hero-title {
 .him-why-head {
   display: block;
   text-align: center;
-  max-width: 760px;
+  max-width: 960px;
   margin: 0 auto 1.8rem;
 }
 
@@ -764,7 +843,7 @@ html:not(.him-preloading) .him-hero-title {
 
 .him-brand-copy .him-display {
   font-weight: 600;
-  font-size: clamp(2.2rem, 3.4vw, 3.05rem);
+  font-size: clamp(2.2rem, 3.4vw, 4.3rem);
   line-height: 1.08;
   color: #1c2830;
 }
@@ -797,7 +876,7 @@ html:not(.him-preloading) .him-hero-title {
 
 .him-why-head .him-display {
   font-weight: 600;
-  font-size: clamp(2rem, 3.4vw, 2.85rem);
+  font-size: clamp(2rem, 3.4vw, 4.3rem);
   color: #1c2830;
 }
 
@@ -881,27 +960,28 @@ html:not(.him-preloading) .him-hero-title {
 .him-catalogue-copy h2 {
   color: #fff;
   font-weight: 500;
-  font-size: clamp(1.45rem, 2.4vw, 2.45rem);
+  font-size: clamp(1.45rem, 2.4vw, 3rem);
   line-height: 1.15;
 }
 
 .him-catalogue-copy p {
-  max-width: 440px;
+  max-width: 700px;
   margin: 0.75rem auto 1.15rem;
   color: rgba(247, 243, 238, 0.82);
-  font-size: clamp(13px, 1.4vw, 15px);
+  font-size: clamp(21px, 1.4vw, 15px);
   line-height: 1.6;
 }
 
 .him-catalogue .him-btn-accent {
-  min-height: 42px;
+  min-height: 56px;
   padding: 0 22px;
   border-radius: 8px;
   background: #e07a62;
-  font-size: 13px;
+  font-size: 17px;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  min-width: 221px;
 }
 
 .him-catalogue-shot {
@@ -1003,7 +1083,7 @@ html:not(.him-preloading) .him-hero-title {
 
 .him-inquiry-form input {
   width: 100%;
-  height: 46px;
+  height: 56px;
   padding: 0 14px;
   border: 0;
   border-radius: 6px;
