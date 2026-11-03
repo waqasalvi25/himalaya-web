@@ -10,7 +10,7 @@
 :root {
   --him-ink: #24343f;
   --him-muted: #66737c;
-  --him-accent: #d86a4c;
+  --him-accent: #DF775D;
   --him-accent-deep: #c45332;
   --him-blush: #f7ece6;
   --him-cream: #f6f2ec;
@@ -93,7 +93,7 @@
 .him-display em {
   display: block;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--him-accent);
 }
 
@@ -111,7 +111,13 @@
 }
 
 .him-kicker-light {
-  color: #f3c7b8;
+  color: #FFF;
+text-align: center;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 16px; /* 100% */
+letter-spacing: 0.32px;
 }
 
 .him-btn {
@@ -128,14 +134,17 @@
   line-height: 1;
   cursor: pointer;
   transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
+    background-color 0.5s ease,
+    color 0.5s ease,
+    border-color 0.5s ease,
+    transform 0.5s ease;
 }
 
 .him-btn:hover {
-  transform: translateY(-1px);
+  background: #df775d;
+  border-color: #df775d;
+  color: #fff;
+  transform: translateY(-4px);
 }
 
 .him-btn-sm {
@@ -151,15 +160,13 @@
 
 .him-btn-accent:hover {
   background: var(--him-accent-deep);
+  border-color: var(--him-accent-deep);
+  color: #fff;
 }
 
 .him-btn-blush {
   background: var(--him-blush);
   color: var(--him-ink);
-}
-
-.him-btn-blush:hover {
-  background: #f1ddd4;
 }
 
 .him-btn-outline {
@@ -169,8 +176,9 @@
 }
 
 .him-btn-outline:hover {
-  border-color: var(--him-accent);
-  color: var(--him-accent-deep);
+  background: #df775d;
+  border-color: #df775d;
+  color: #fff;
 }
 
 .him-section {
@@ -185,6 +193,11 @@
   display: block;
   height: 44px;
   width: auto;
+  margin-bottom: 10px;
+
+  /* height: 69.361px;
+  width: auto;
+  margin-bottom: 14px; */
 }
 
 .him-logo-img-light {
@@ -192,11 +205,19 @@
   filter: brightness(0) invert(1);
 }
 
+.him-footer-logo {
+  display: block;
+  height: 52px;
+  width: auto;
+  margin-bottom: 14px;
+}
+
 .him-header {
   position: sticky;
   top: 0;
   z-index: 40;
-  margin-bottom: calc(-1 * (18px + 78px));
+  margin-bottom: calc(-1 * (18px + 118px));
+  /* margin-bottom: calc(-1 * (18px + 78px)); */
   padding-top: 18px;
   background: transparent;
   border: 0;
@@ -206,7 +227,7 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  min-height: 78px;
+  min-height: 110px;
   padding: 0 18px 0 22px;
   background: #fff;
   border-radius: 16px;
@@ -224,7 +245,7 @@
 .him-nav-list {
   display: flex;
   align-items: center;
-  gap: 38px;
+  gap: 37px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -234,17 +255,17 @@
   display: inline-flex;
   align-items: center;
   gap: 0.28rem;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 400;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   white-space: nowrap;
-  color: #2a3842;
+  color: #717171;
 }
 
 .him-nav-link.is-active,
 .him-nav-link:hover {
-  color: #e07a62;
+  color: #DF775D;
 }
 
 .him-nav-dropdown {
@@ -313,7 +334,7 @@
   color: #c45332;
   border-color: #e7a08c;
   border-radius: 8px;
-  min-height: 42px;
+  min-height: 56px;
   padding: 0 18px;
   font-size: 15px;
   font-weight: 600;
@@ -323,8 +344,9 @@
 }
 
 .him-btn-quote:hover {
-  background: #fff6f3;
-  border-color: #c45332;
+  background: #df775d;
+  border-color: #df775d;
+  color: #fff;
 }
 
 .him-burger {
@@ -353,6 +375,9 @@
   height: clamp(324px, 62vw, 860px);
   overflow: hidden;
   background: #e7b5a2;
+  margin: 6px;
+  border-radius: 10px;
+  margin-top: 16px;
 }
 
 .him-hero-media {
@@ -392,13 +417,23 @@
   opacity: 1;
 }
 
+.him-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.67) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
 .him-hero-copy {
   position: absolute;
   inset: 0;
   z-index: 2;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-right: clamp(16px, 2.76vw, 53px);
   padding-bottom: clamp(10px, 1.4%, 22px);
   pointer-events: none;
 }
@@ -406,11 +441,12 @@
 .him-hero-title {
   margin: 0;
   color: #fff;
-  font-family: var(--font-display);
-  font-size: clamp(1.85rem, 10vw, 11.5rem);
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0.42em;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: min(212.805px, calc((100vw - 5.5rem) / 7.45));
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.08571;
+  letter-spacing: -0.05em;
   white-space: nowrap;
   opacity: 0;
 }
@@ -426,11 +462,11 @@ html:not(.him-preloading) .him-hero-title {
   }
   24% {
     opacity: 1;
-    letter-spacing: 0.012em;
+    letter-spacing: -0.05em;
   }
   68% {
     opacity: 1;
-    letter-spacing: 0.012em;
+    letter-spacing: -0.05em;
   }
   92%,
   100% {
@@ -443,7 +479,7 @@ html:not(.him-preloading) .him-hero-title {
   html:not(.him-preloading) .him-hero-title {
     animation: none;
     opacity: 1;
-    letter-spacing: 0.012em;
+    letter-spacing: -10.64px;
   }
 }
 
@@ -546,9 +582,10 @@ html:not(.him-preloading) .him-hero-title {
 .him-brand-points p,
 .him-why-card p {
   margin: 0.35rem 0 0;
-  color: #344653;
+  color: #1E1E1E;
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 26px; /* 144.444% */
+letter-spacing: -0.36px;
 }
 
 .him-heritage-photo {
@@ -568,7 +605,8 @@ html:not(.him-preloading) .him-hero-title {
 
 .him-rooted {
   background: #f6f1ea;
-  padding: clamp(4rem, 7vw, 5.75rem) 0 0.75rem;
+  padding: clamp(4rem, 7vw, 2.75rem) 0 0.75rem;
+  padding-bottom: 0;
 }
 
 .him-rooted .him-display {
@@ -593,10 +631,12 @@ html:not(.him-preloading) .him-hero-title {
 
 .him-rooted-copy p {
   margin: 1.05rem auto 1.2rem;
-  max-width: 940px;
-  color: #3a4650;
+  max-width: 1150px;
+  color: #1E1E1E;
   font-size: 22px;
   line-height: 30px;
+  letter-spacing: -0.44px;
+  font-weight: 400;
 }
 
 .normal-em{
@@ -609,23 +649,18 @@ html:not(.him-preloading) .him-hero-title {
   padding: 0 18px;
   background: var(--him-blush);
   color: #2c3942;
-  border-color: 1.5px solid #DF775D;
+  border-color: #df775d;
   border-radius: 6px;
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
 }
 
 .him-btn-read:hover {
-  background: #fff;
-  border-color: #d98974;
-  color: var(--him-accent-deep);
+  background: #df775d;
+  border-color: #df775d;
+  color: #fff;
 }
 
 
@@ -790,9 +825,9 @@ transition:
 
 .him-product-card-meta {
   position: absolute;
-  left: 14px;
-  right: 14px;
-  bottom: 14px;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -800,9 +835,21 @@ transition:
   color: #fff;
 }
 
-.him-product-card h3 {
-  font-size: 1.45rem;
+.him-product-kicker {
+  margin: 0 0 6px;
+  font-family: var(--font-display);
+  font-size: 11px;
   font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.him-product-card h3 {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.35vw, 26px);
+  font-weight: 500;
+  line-height: 1.15;
   color: #fff;
 }
 
@@ -810,17 +857,23 @@ transition:
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  background: rgba(20, 22, 26, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #2a2420;
+  border: 1.5px solid #e2a08c;
   color: #fff;
   flex: none;
+  transition:
+    background-color 0.5s ease,
+    border-color 0.5s ease,
+    color 0.5s ease;
 }
 
 .him-icon-btn:hover {
-  background: var(--him-accent);
+  background: #df775d;
+  border-color: #df775d;
+  color: #fff;
 }
 
 .him-brand-panel {
@@ -853,11 +906,13 @@ transition:
 }
 
 .him-brand-copy > p {
-  max-width: 540px;
+  max-width: 840px;
   margin: 0.8rem 0 0;
-  color: #3a4650;
+  color: #1E1E1E;
   font-size: 20px;
   line-height: 30px;
+  font-weight: 400;
+  letter-spacing: -0.42px;
 }
 
 .him-brand-points {
@@ -887,11 +942,14 @@ transition:
 }
 
 .him-why-head p {
-  max-width: 540px;
+  max-width: 840px;
   margin: 0.7rem auto 0;
-  color: #5c6972;
-  font-size: 15px;
-  line-height: 1.65;
+  color: #344653;
+font-size: 21px;
+font-style: normal;
+font-weight: 400;
+line-height: 31px; /* 147.619% */
+letter-spacing: -0.42px;
 }
 
 .him-why-grid {
@@ -901,8 +959,8 @@ transition:
 }
 
 .him-why-card {
-  padding: 1.4rem 1.2rem 1.5rem;
-  border-radius: 16px;
+  padding: 5.8rem 1.8rem 5.8rem;
+  border-radius: 10.261px;
   background: #f6f1ea;
 }
 
@@ -910,26 +968,40 @@ transition:
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 57.464px;
+  height: 57.464px;
   margin-bottom: 1rem;
   border-radius: 999px;
-  background: #e08b74;
+  background: #DF775D;
   color: #fff;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 26px;
+  font-weight: 700;
 }
 
 .him-why-card h3 {
-  font-size: 16px;
+  /* font-size: 16px;
   font-weight: 600;
-  color: #1c2830;
+  color: #1c2830; */
+  color: #111;
+font-size: 28px;
+font-style: normal;
+font-weight: 600;
+line-height: 31.81px; /* 113.608% */
+letter-spacing: -0.56px;
+font-family: var(--font-display);
 }
 
 .him-why-card p {
-  color: #5c6972;
+  /* color: #5c6972;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.6; */
+  color: #1E1E1E;
+font-size: 19px;
+font-style: normal;
+font-weight: 400;
+line-height: 28.732px; /* 151.22% */
+letter-spacing: -0.38px;
+padding-top: 5px;
 }
 
 .him-catalogue {
@@ -948,6 +1020,7 @@ transition:
     radial-gradient(circle at 30% 80%, rgba(255, 255, 255, 0.04) 0 34px, transparent 35px),
     #2a4150;
   color: #f7f3ee;
+  background-image: url(../public/images/cat-bg-texture.png);
 }
 
 .him-catalogue-copy {
@@ -1043,6 +1116,13 @@ transition:
   text-align: center;
   color: #fff;
   box-shadow: 0 22px 50px rgba(16, 24, 32, 0.18);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(32, 48, 60, 0.88),
+      rgba(24, 36, 46, 0.92)
+    ),
+    url("../public/images/new-bg.png") lightgray 0px -83.244px / 100% 235.43% no-repeat;
 }
 
 .him-inquiry-bg,
@@ -1057,9 +1137,19 @@ transition:
   object-fit: cover;
 }
 
-.him-inquiry-shade {
+/* .him-inquiry-shade {
   background: linear-gradient(180deg, rgba(32, 48, 60, 0.88), rgba(24, 36, 46, 0.92));
-}
+} */
+ /* .him-inquiry-shade {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(32, 48, 60, 0.88),
+      rgba(24, 36, 46, 0.92)
+    ),
+    url("../public/images/new-bg.png") lightgray 0px -83.244px / 100% 235.43% no-repeat;
+} */
+
 
 .him-inquiry-copy {
   position: relative;
@@ -1067,10 +1157,15 @@ transition:
 }
 
 .him-inquiry h2 {
-  max-width: 680px;
+  max-width: 880px;
   margin: 0 auto;
   color: #fff;
-  font-size: clamp(1.8rem, 3vw, 2.55rem);
+  font-size: clamp(1.8rem, 3vw, 2.1rem);
+font-style: normal;
+font-weight: 500;
+line-height: 41.25px; /* 122.222% */
+letter-spacing: -0.675px;
+text-transform: capitalize;
 }
 
 .him-inquiry-form {
@@ -1118,6 +1213,7 @@ transition:
   padding: 9.5rem 0 0;
   color: #efe8e1;
   background: #1b232b;
+background-image: url(../public/images/footer-bg.png);
 }
 
 .him-footer-bg,
@@ -1134,7 +1230,7 @@ transition:
 }
 
 .him-footer-shade {
-  background: rgba(18, 24, 30, 0.86);
+  background: rgba(18, 24, 30, 0.462);
 }
 
 .him-footer-grid,
@@ -1152,8 +1248,14 @@ transition:
 
 .him-footer h3 {
   margin: 0.2rem 0 1rem;
-  font-size: 16px;
   font-weight: 600;
+  font-family: var(--font-display);
+  color: #FFF;
+font-size: 24px;
+font-style: normal;
+line-height: 25px; /* 100% */
+letter-spacing: -0.25px;
+text-transform: capitalize;
 }
 
 .him-footer-brand p {
@@ -1224,15 +1326,20 @@ transition:
 
 .him-footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(10, 14, 18, 0.35);
+  background: rgba(56, 73, 91, 0.354);
 }
 
 .him-footer-bottom p {
   margin: 0;
   padding: 0.9rem 0;
   text-align: center;
-  color: rgba(239, 232, 225, 0.65);
-  font-size: 13px;
+  color: #FFF;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 25px; /* 166.667% */
+letter-spacing: -0.15px;
+text-transform: capitalize;
 }
 
 .him-page-hero {

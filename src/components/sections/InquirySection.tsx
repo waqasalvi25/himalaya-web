@@ -40,7 +40,7 @@ export function InquirySection() {
           <img src={images.mountains} alt="" className="him-inquiry-bg" />
           <div className="him-inquiry-shade" />
           <div className="him-inquiry-copy">
-            <p className="him-kicker him-kicker-light">Work with us</p>
+            <p className="him-kicker him-kicker-light">Let’s work together</p>
             <h2 className="him-display">Ready to Source Premium Himalayan Salt Products?</h2>
             {sent ? (
               <p className="him-inquiry-success" role="status">
@@ -81,7 +81,7 @@ export function InquirySection() {
                   />
                 </label>
                 <button type="submit" className="him-btn him-btn-accent">
-                  Get a Quote
+                  GEt In Touch
                 </button>
                 {error ? <p className="him-form-error">{error}</p> : null}
               </form>

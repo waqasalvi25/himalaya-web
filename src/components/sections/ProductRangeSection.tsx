@@ -1,29 +1,33 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useRise } from "@/components/motion/Reveal";
 import { images } from "@/lib/images";
 
 const products = [
   {
-    title: "Edible Salt",
+    kicker: "Culinary",
+    title: "Kitchen and Seasoning",
     href: "/products/edible-salt",
     image: images.products.edible,
     alt: "Bowls of fine and coarse pink salt",
   },
   {
-    title: "Salt Bricks",
+    kicker: "Architectural",
+    title: "Salt Tiles & Panels",
     href: "/products/salt-bricks",
     image: images.products.bricks,
     alt: "Salt mine walls",
   },
   {
-    title: "Salt Lamps",
+    kicker: "Wellness",
+    title: "Home Decor Salt Lamp",
     href: "/products/salt-lamps",
     image: images.products.lamp,
     alt: "Himalayan salt lamp on a wooden table",
   },
   {
-    title: "Industrial Salt",
+    kicker: "Industrial",
+    title: "Industrial & Bulk Salt",
     href: "/products/industrial-salt",
     image: images.products.industrial,
     alt: "Warehouse ready for bulk salt shipments",
@@ -55,9 +59,12 @@ export function ProductRangeSection() {
               <img src={product.image} alt={product.alt} />
               <div className="him-product-card-shade" />
               <div className="him-product-card-meta">
-                <h3>{product.title}</h3>
+                <div>
+                  <p className="him-product-kicker">{product.kicker}</p>
+                  <h3>{product.title}</h3>
+                </div>
                 <Link to={product.href} className="him-icon-btn" aria-label={`View ${product.title}`}>
-                  <ArrowUpRight className="size-4" />
+                  <ArrowRight strokeWidth={2.25} className="size-5" />
                 </Link>
               </div>
             </article>

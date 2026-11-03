@@ -2,12 +2,14 @@ import { ImageUrl } from "@/utils/Functions";
 
 export const images = {
   logo: ImageUrl("h-logo.png"),
+  footerLogo: ImageUrl("footer-logo.png"),
   preHim: ImageUrl("him.png"),
   preMark: ImageUrl("center=logo.png"),
   preLaya: ImageUrl("laya.png"),
   hero: ImageUrl("hero-salt.jpg"),
   heritage: ImageUrl("heritage-salt.png"),
-  mountains: ImageUrl("mountains.jpg"),
+  mountains: ImageUrl("new-bg.png"),
+  // mountains: ImageUrl("mountains.jpg"),
   saltLamp: ImageUrl("salt-lamp.jpg"),
   rooted: ImageUrl("rooted-nature.png"),
   yourBrand: ImageUrl("your-brand.png"),

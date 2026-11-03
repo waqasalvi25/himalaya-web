@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from "lucide-react";
-import { Logo } from "@/components/site/Logo";
 import { footerProductLinks, footerQuickLinks } from "@/components/site/navLinks";
 import { images } from "@/lib/images";
 
@@ -20,11 +19,10 @@ export function Footer() {
       <div className="him-container him-footer-grid">
         <div className="him-footer-brand">
           <Link to="/" aria-label="Himalaya home">
-            <Logo tone="light" />
+            <img src={images.footerLogo} alt="Himalaya" className="him-footer-logo" />
           </Link>
           <p>
-            Premium Himalayan pink salt, sourced with care and prepared for kitchens, wellness
-            spaces, and brands around the world.
+            This text is a temporary placeholder and needs to be replaced with SEO-friendly content and relevant keywords.
           </p>
           <ul className="him-social">
             {social.map((item) => (
