@@ -601,6 +601,11 @@ letter-spacing: -0.36px;
   min-height: 360px;
   object-fit: cover;
   object-position: center 70%;
+  transition: transform 0.8s cubic-bezier(0.22, 0.8, 0.28, 1);
+}
+
+.him-heritage-photo:hover img {
+  transform: scale(1.08);
 }
 
 .him-rooted {
@@ -690,10 +695,20 @@ letter-spacing: -0.36px;
 
 
 
+.him-rooted-frame {
+  overflow: hidden;
+}
+
 .him-rooted-photo {
-  /* width: min(100%, 1180px); */
+  display: block;
+  width: 100%;
   height: auto;
   margin: clamp(-3.5rem, -5vw, -1.5rem) auto 0;
+  transition: transform 0.8s cubic-bezier(0.22, 0.8, 0.28, 1);
+}
+
+.him-rooted-frame:hover .him-rooted-photo {
+  transform: scale(1.06);
 }
 
 .him-rooted{
@@ -814,6 +829,11 @@ letter-spacing: -0.36px;
   height: 100%;
   min-height: 280px;
   object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.22, 0.8, 0.28, 1);
+}
+
+.him-product-card:hover img {
+  transform: scale(1.08);
 }
 
 .him-product-card-shade {
@@ -886,12 +906,21 @@ letter-spacing: -0.36px;
   background: #f6f1ea;
 }
 
+.him-brand-photo-frame {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
 .him-brand-photo {
+  display: block;
   width: 100%;
-  /* height: 430px; */
   object-fit: cover;
   object-position: center;
-  border-radius: 16px;
+  transition: transform 0.8s cubic-bezier(0.22, 0.8, 0.28, 1);
+}
+
+.him-brand-photo-frame:hover .him-brand-photo {
+  transform: scale(1.06);
 }
 
 .him-brand-copy .him-display {
@@ -1096,6 +1125,11 @@ padding-top: 5px;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.22, 0.8, 0.28, 1);
+}
+
+.him-gallery-grid figure:hover img {
+  transform: scale(1.08);
 }
 
 .him-gallery-grid .is-tall {
@@ -1712,7 +1746,21 @@ html.him-preloading body {
   .him-pre-laya,
   .him-pre-mark,
   .him-pre-company,
-  .him-pre-tag {
+  .him-pre-tag,
+  .him-product-card img,
+  .him-gallery-grid img,
+  .him-heritage-photo img,
+  .him-brand-photo,
+  .him-rooted-photo {
     animation: none;
+    transition: none;
+  }
+
+  .him-product-card:hover img,
+  .him-gallery-grid figure:hover img,
+  .him-heritage-photo:hover img,
+  .him-brand-photo-frame:hover .him-brand-photo,
+  .him-rooted-frame:hover .him-rooted-photo {
+    transform: none;
   }
 }

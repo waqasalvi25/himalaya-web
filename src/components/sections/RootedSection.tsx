@@ -24,11 +24,13 @@ export function RootedSection() {
       </div>
 
       <div className="him-container3 mt-28">
-        <img
-          src={images.rooted}
-          alt="Himalayan salt pouches, bricks, and a salt lamp"
-          className="him-rooted-photo"
-        />
+        <div className="him-rooted-frame">
+          <img
+            src={images.rooted}
+            alt="Himalayan salt pouches, bricks, and a salt lamp"
+            className="him-rooted-photo"
+          />
+        </div>
       </div>
     </section>
   );

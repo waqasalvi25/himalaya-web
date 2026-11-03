@@ -20,11 +20,13 @@ export function WhiteLabelSection() {
     <section className="him-section him-section-tight !pb-0">
       <div className="him-container">
         <div ref={panel.ref} className={`him-brand-panel ${panel.className}`}>
-          <img
-            src={images.yourBrand}
-            alt="Himalayan salt pouches and a tube on a shelf"
-            className="him-brand-photo"
-          />
+          <div className="him-brand-photo-frame">
+            <img
+              src={images.yourBrand}
+              alt="Himalayan salt pouches and a tube on a shelf"
+              className="him-brand-photo"
+            />
+          </div>
 
           <div className="him-brand-copy">
             <h2 className="him-display">
