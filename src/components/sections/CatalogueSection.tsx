@@ -20,7 +20,7 @@ export function CatalogueSection() {
               Explore our complete range of Himalayan salt products, specifications, and packaging
               options.
             </p>
-            <Link to="/contact" className="him-btn him-btn-accent">
+            <Link to="/download-catalog" className="him-btn him-btn-accent">
               Download PDF
             </Link>
           </div>

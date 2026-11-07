@@ -1,11 +1,11 @@
-import { PageHero } from "@/components/site/PageHero";
+import { BlogPageSection } from "@/components/sections/BlogPageSection";
 import { usePageMeta } from "@/hooks/usePageMeta";
 
 export default function Blog() {
-  usePageMeta({ title: "Blog | Himalaya Salt" });
+  usePageMeta({ title: "Blogs | Himalaya Salt" });
   return (
     <main>
-      <PageHero title="Blog" />
+      <BlogPageSection />
     </main>
   );
 }

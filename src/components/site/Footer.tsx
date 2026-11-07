@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from "lucide-react";
-import { footerProductLinks, footerQuickLinks } from "@/components/site/navLinks";
+import { footerInfoLinks, footerQuickLinks } from "@/components/site/navLinks";
 import { images } from "@/lib/images";
 
 const social = [
@@ -47,9 +47,9 @@ export function Footer() {
         </div>
 
         <div>
-          <h3>Products</h3>
+          <h3>Info Links</h3>
           <ul className="him-footer-links">
-            {footerProductLinks.map((link) => (
+            {footerInfoLinks.map((link) => (
               <li key={link.label}>
                 <Link to={link.href}>{link.label}</Link>
               </li>

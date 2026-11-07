@@ -80,7 +80,7 @@ export function InquirySection() {
                     onChange={(event) => setValues((current) => ({ ...current, phone: event.target.value }))}
                   />
                 </label>
-                <button type="submit" className="him-btn him-btn-accent">
+                <button type="submit" className="him-btn him-btn-accent get-touch">
                   GEt In Touch
                 </button>
                 {error ? <p className="him-form-error">{error}</p> : null}

@@ -81,11 +81,11 @@ export function Header() {
         </nav>
 
         <div className="him-header-actions">
-          <Link to="/contact" className="him-catalog-link">
+          <Link to="/download-catalog" className="him-catalog-link">
             Download Catalog
             <Download className="size-3.5" strokeWidth={2.25} />
           </Link>
-          <Link to="/contact#quote" className="him-btn him-btn-quote">
+          <Link to="/request-a-quote" className="him-btn him-btn-quote">
             Request a Quote
           </Link>
         </div>
@@ -147,10 +147,10 @@ export function Header() {
           ))}
         </ul>
         <div className="him-mobile-actions">
-          <Link to="/contact" className="him-btn him-btn-outline">
+          <Link to="/download-catalog" className="him-btn him-btn-outline">
             Download Catalog
           </Link>
-          <Link to="/contact#quote" className="him-btn him-btn-quote">
+          <Link to="/request-a-quote" className="him-btn him-btn-quote">
             Request a Quote
           </Link>
         </div>

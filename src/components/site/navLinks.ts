@@ -11,10 +11,11 @@ export const navLinks: NavLink[] = [
     label: "Products",
     href: "/products",
     children: [
-      { label: "Edible Salt", href: "/products/edible-salt" },
-      { label: "Salt Lamps", href: "/products/salt-lamps" },
-      { label: "Salt Bricks", href: "/products/salt-bricks" },
-      { label: "Industrial Salt", href: "/products/industrial-salt" },
+      { label: "Himalayan Pink Salt", href: "/products/himalayan-pink-salt" },
+      { label: "Kitchen and Seasoning", href: "/products/kitchen-and-seasoning" },
+      { label: "Salt Tiles & Panels", href: "/products/salt-tiles-panels" },
+      { label: "Home Decor Salt Lamp", href: "/products/home-decor-salt-lamp" },
+      { label: "Industrial & Bulk Salt", href: "/products/industrial-bulk-salt" },
     ],
   },
   { label: "Private Labeling", href: "/private-labeling" },
@@ -24,17 +25,15 @@ export const navLinks: NavLink[] = [
 
 export const footerQuickLinks = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
   { label: "Products", href: "/products" },
-  { label: "Why Himalaya", href: "/why-himalaya" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Contact", href: "/contact" },
+  { label: "About The Company", href: "/about" },
+  { label: "Photos", href: "/gallery" },
+  { label: "Blogs", href: "/blog" },
 ];
 
-export const footerProductLinks = [
-  { label: "Edible Salt", href: "/products/edible-salt" },
-  { label: "Salt Lamps", href: "/products/salt-lamps" },
-  { label: "Salt Bricks", href: "/products/salt-bricks" },
-  { label: "Industrial Salt", href: "/products/industrial-salt" },
-  { label: "Private Label", href: "/contact" },
+export const footerInfoLinks = [
+  { label: "FAQ's", href: "/contact" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms-conditions" },
 ];
