@@ -19,6 +19,8 @@ import RequestQuote from "./pages/RequestQuote.tsx";
 import DownloadCatalog from "./pages/DownloadCatalog.tsx";
 import PrivateLabeling from "./pages/PrivateLabeling.tsx";
 import Blog from "./pages/Blog.tsx";
+import BlogArticle from "./pages/BlogArticle.tsx";
+import Faq from "./pages/Faq.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import TermsConditions from "./pages/TermsConditions.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -54,6 +56,8 @@ const App = () => (
         <Route path="/request-a-quote" element={<RequestQuote />} />
         <Route path="/download-catalog" element={<DownloadCatalog />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/himalayan-pink-salt" element={<BlogArticle />} />
+        <Route path="/faqs" element={<Faq />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
         <Route path="*" element={<NotFound />} />

@@ -32,7 +32,7 @@ export const footerQuickLinks = [
 ];
 
 export const footerInfoLinks = [
-  { label: "FAQ's", href: "/contact" },
+  { label: "FAQ's", href: "/faqs" },
   { label: "Contact Us", href: "/contact" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms & Conditions", href: "/terms-conditions" },

@@ -1078,13 +1078,17 @@ html:not(.him-preloading) .him-hero-title {
 .him-catalogue .him-btn-accent {
   min-height: 56px;
   padding: 0 22px;
-  border-radius: 8px;
-  background: #e07a62;
+  /* border-radius: 8px; */
+  /* background: #e07a62; */
   font-size: 17px;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   min-width: 221px;
+  color: #fff;
+  border-radius: 7px;
+  border: 1.5px solid #fff;
+  background: rgba(255, 255, 255, 0.11);
 }
 
 .him-catalogue-shot {
@@ -3548,10 +3552,10 @@ main:has(.him-quote) + .him-footer {
   color: #fff;
   font-size: clamp(2.2rem, 3.6vw, 4rem);
 
-font-style: normal;
-font-weight: 400 !important;
-line-height: 112%; /* 78.4px */
-letter-spacing: -3.5px;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: 112%; /* 78.4px */
+  letter-spacing: -3.5px;
 }
 
 .him-catalog-panel h2 em {
@@ -3858,6 +3862,656 @@ main:has(.him-catalog-page) + .him-footer {
   .him-blog-lead,
   .him-blog-feature-copy p {
     max-width: none;
+  }
+}
+
+.him-products-page {
+  background: #fff;
+  color: #24343f;
+  padding: calc(18px + 148px) 0 0;
+}
+
+.him-products-page h1,
+.him-products-page h2,
+.him-products-needs h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #111;
+}
+
+.him-products-page h1 {
+  font-size: clamp(2.45rem, 4.3vw, 4.3rem);
+  line-height: 1.08;
+}
+
+.him-products-page h2 {
+  font-size: clamp(2.2rem, 3.6vw, 3.5rem);
+  line-height: 1.12;
+}
+
+.him-products-page h1 em,
+.him-products-page h2 em {
+  font-style: italic;
+  font-weight: 600;
+  color: #754d51;
+}
+
+.him-products-lead,
+.him-products-format p {
+  color: #66737c;
+  font-family: var(--font-sans);
+  font-size: 20px;
+  line-height: 1.75;
+}
+
+.him-products-lead {
+  max-width: 46rem;
+  margin: 1.35rem 0 0;
+}
+
+.him-products-page .him-product-grid {
+  margin-top: clamp(2rem, 3.2vw, 2.85rem);
+  margin-bottom: clamp(3rem, 5.5vw, 4.6rem);
+}
+
+.him-products-page .him-product-card,
+.him-products-page .him-product-card img {
+  min-height: clamp(300px, 24vw, 390px);
+}
+
+.him-products-page .him-product-card h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.35vw, 26px);
+  font-weight: 500;
+  line-height: 1.15;
+  color: #fff;
+}
+
+.him-products-format {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(2.25rem, 4.2vw, 4.5rem);
+}
+
+.him-products-format h2 {
+  max-width: 11em;
+}
+
+.him-products-format p {
+  max-width: 34rem;
+  margin: 1.05rem 0 0;
+}
+
+.him-products-format .him-btn {
+  margin-top: 1.7rem;
+}
+
+.him-products-frame {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.him-products-frame img {
+  width: 100%;
+  height: clamp(280px, 32vw, 520px);
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.22, 0.8, 0.28, 1);
+}
+
+.him-products-frame:hover img {
+  transform: scale(1.06);
+}
+
+.him-products-needs {
+  padding: clamp(3.2rem, 5.5vw, 4.75rem) 0 clamp(3rem, 5.5vw, 4.6rem);
+}
+
+.him-products-needs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: clamp(1.6rem, 2.6vw, 2.2rem);
+}
+
+.him-products-needs article {
+  padding: 1.35rem 1.3rem 1.45rem;
+  border-radius: 14px;
+  background: #f3e9e4;
+}
+
+.him-products-needs h3 {
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+
+.him-products-needs p {
+  margin: 0.55rem 0 0;
+  color: #1e1e1e;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 28.732px;
+  letter-spacing: -0.38px;
+}
+
+@media (max-width: 900px) {
+  .him-products-page {
+    padding-top: calc(18px + 128px);
+  }
+
+  .him-products-format,
+  .him-products-needs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .him-products-frame img {
+    height: 240px;
+  }
+
+  .him-products-lead,
+  .him-products-format p,
+  .him-products-format h2 {
+    max-width: none;
+  }
+}
+
+.him-article {
+  background: #fff;
+  color: #24343f;
+  padding: calc(18px + 148px) 0 clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.him-article h1,
+.him-article-copy h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #111;
+}
+
+.him-article h1 {
+  max-width: 16em;
+  font-size: clamp(2.45rem, 4.3vw, 4.3rem);
+  line-height: 1.08;
+}
+
+.him-article h1 em,
+.him-article-copy h2 em,
+.him-article-note em {
+  font-style: italic;
+  font-weight: 600;
+  color: #754d51;
+}
+
+.him-article-lead,
+.him-article-copy p {
+  color: #66737c;
+  font-family: var(--font-sans);
+  font-size: 20px;
+  line-height: 1.75;
+}
+
+.him-article-lead {
+  max-width: 84rem;
+  margin: 1.35rem 0 0;
+}
+
+.him-article-banner {
+  overflow: hidden;
+  margin-top: clamp(1.6rem, 3vw, 2.2rem);
+  border-radius: 16px;
+}
+
+.him-article-banner img {
+  width: 100%;
+  height: clamp(280px, 36vw, 520px);
+  object-fit: cover;
+}
+
+.him-article-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 4.25rem);
+  align-items: start;
+  margin-top: clamp(2.2rem, 4vw, 3.4rem);
+}
+
+.him-article-nav {
+  position: sticky;
+  top: 158px;
+}
+
+.him-article-nav > p {
+  margin: 0 0 1rem;
+  color: #754d51;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.him-article-nav nav {
+  display: grid;
+  gap: 0.85rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid rgba(117, 77, 81, 0.18);
+}
+
+.him-article-nav nav a {
+  color: #66737c;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.him-article-nav nav a.is-active,
+.him-article-nav nav a:hover {
+  color: #111;
+}
+
+.him-article-nav .him-btn {
+  min-width: 0;
+  width: 100%;
+  margin-top: 1.25rem;
+}
+
+.him-article-copy {
+  max-width: 46rem;
+}
+
+.him-article-copy.blog-d{
+  max-width: 90%;
+}
+
+.him-article-copy.blog-d p{
+    max-width: 100%;
+}
+
+.him-article-copy section {
+  scroll-margin-top: 150px;
+}
+
+.him-article-copy section + section {
+  margin-top: 2.15rem;
+}
+
+.him-article-copy h2 {
+  font-size: clamp(1.7rem, 2.2vw, 2.15rem);
+  line-height: 1.2;
+}
+
+.him-article-copy p {
+  max-width: 42rem;
+  margin: 1.05rem 0 0;
+}
+
+.him-article-note {
+  max-width: 72rem;
+  margin: 2rem 0 0;
+  padding: 1.35rem 1.5rem;
+  border-radius: 14px;
+  background: #f3e9e4;
+  color: #111;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.him-article-copy .him-btn {
+  margin-top: 1.7rem;
+}
+
+.him-article-meta {
+  margin-top: 1.8rem;
+  color: #8d7f7b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .him-article {
+    padding-top: calc(18px + 128px);
+  }
+
+  .him-article h1,
+  .him-article-lead,
+  .him-article-copy,
+  .him-article-copy p,
+  .him-article-note {
+    max-width: none;
+  }
+
+  .him-article-banner img {
+    height: 220px;
+  }
+
+  .him-article-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .him-article-nav {
+    position: static;
+  }
+}
+
+.him-faq {
+  background: #fff;
+  color: #24343f;
+  padding: calc(18px + 148px) 0 clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.him-faq h1,
+.him-faq-groups h2,
+.him-faq-side h2,
+.him-faq-groups h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #111;
+}
+
+.him-faq h1 {
+  font-size: clamp(2.45rem, 4.3vw, 4.3rem);
+  line-height: 1.08;
+}
+
+.him-faq h1 em {
+  font-style: italic;
+  font-weight: 600;
+  color: #754d51;
+}
+
+.him-faq-lead {
+  max-width: 42rem;
+  margin: 1.35rem 0 0;
+  color: #66737c;
+  font-size: 20px;
+  line-height: 1.75;
+}
+
+.him-faq-layout {
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  gap: clamp(1.5rem, 2.4vw, 2.75rem);
+  align-items: start;
+  margin-top: clamp(2.4rem, 4vw, 3.6rem);
+}
+
+.him-faq-side {
+  position: sticky;
+  top: 158px;
+  padding: 1.4rem 1.25rem 1.5rem;
+  border-radius: 14px;
+  background: #f3e9e4;
+}
+
+.him-faq-side > p:first-child {
+  margin: 0 0 1rem;
+  color: #754d51;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.him-faq-side nav {
+  display: grid;
+  gap: 0.8rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid rgba(117, 77, 81, 0.18);
+}
+
+.him-faq-side nav a {
+  color: #24343f;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.him-faq-side nav a.is-active,
+.him-faq-side nav a:hover {
+  color: #754d51;
+}
+
+.him-faq-side h2 {
+  margin-top: 1.25rem;
+  font-size: 1.45rem;
+  line-height: 1.25;
+}
+
+.him-faq-side-note {
+  margin: 0.55rem 0 0;
+  color: #66737c;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.him-faq-side .him-btn {
+  min-width: 0;
+  width: 100%;
+  margin-top: 1.15rem;
+}
+
+.him-faq-groups section {
+  scroll-margin-top: 150px;
+}
+
+.him-faq-groups section + section {
+  margin-top: 2.4rem;
+}
+
+.him-faq-groups h2 {
+  margin-bottom: 0.4rem;
+  font-size: clamp(1.7rem, 2.2vw, 2.15rem);
+  line-height: 1.2;
+}
+
+.him-faq-groups article {
+  border-bottom: 1px solid rgba(36, 52, 63, 0.12);
+  padding: 1.05rem 0 1.15rem;
+}
+
+.him-faq-groups h3 button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #111;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.5vw, 1.4rem);
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: left;
+  cursor: pointer;
+}
+
+.him-faq-mark {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+
+.him-faq-mark::before,
+.him-faq-mark::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 14px;
+  height: 1.5px;
+  background: #8d7f7b;
+  transform: translateY(-50%);
+}
+
+.him-faq-groups article:not(.is-open) .him-faq-mark::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.him-faq-groups article p {
+  max-width: none;
+  margin: 0.7rem 0 0;
+  color: #66737c;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .him-faq {
+    padding-top: calc(18px + 128px);
+  }
+
+  .him-faq-lead {
+    max-width: none;
+  }
+
+  .him-faq-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .him-faq-side {
+    position: static;
+  }
+}
+
+.him-legal {
+  background: #fbf5f0;
+  color: #24343f;
+  padding: calc(18px + 148px) 0 clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.him-legal h1,
+.him-legal h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #111;
+}
+
+.him-legal h1 {
+  font-size: clamp(2.45rem, 4.3vw, 4.3rem);
+  line-height: 1.08;
+}
+
+.him-legal h1 em,
+.him-legal-side h2 em {
+  font-style: italic;
+  font-weight: 600;
+  color: #754d51;
+}
+
+.him-legal-lead {
+  max-width: 46rem;
+  margin: 1.35rem 0 0;
+  color: #66737c;
+  font-size: 20px;
+  line-height: 1.75;
+}
+
+.him-legal-layout {
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  gap: clamp(1.5rem, 2.4vw, 2.75rem);
+  align-items: start;
+  margin-top: clamp(2.4rem, 4vw, 3.6rem);
+}
+
+.him-legal-side {
+  position: sticky;
+  top: 158px;
+}
+
+.him-legal-side > p:first-child {
+  margin: 0 0 1rem;
+  color: #754d51;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.him-legal-side h2 {
+  font-size: clamp(1.55rem, 2vw, 1.9rem);
+  line-height: 1.25;
+}
+
+.him-legal-side > p:last-of-type {
+  margin: 0.9rem 0 0;
+  color: #66737c;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.him-legal-side .him-btn {
+  margin-top: 1.35rem;
+}
+
+.him-legal-copy section {
+  padding: 0 0 1.25rem;
+  border-bottom: 1px solid rgba(36, 52, 63, 0.12);
+}
+
+.him-legal-copy section + section {
+  margin-top: 1.35rem;
+}
+
+.him-legal-copy h2 {
+  font-size: clamp(1.25rem, 1.6vw, 1.55rem);
+  line-height: 1.3;
+}
+
+.him-legal-copy section p,
+.him-legal-note p {
+  margin: 0.65rem 0 0;
+  color: #66737c;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.him-legal-note {
+  margin-top: 1.6rem;
+  padding: 1.45rem 1.4rem 1.5rem;
+  border-radius: 14px;
+  background: #f3e9e4;
+}
+
+.him-legal-note h2 {
+  font-size: clamp(1.35rem, 1.8vw, 1.7rem);
+  line-height: 1.3;
+}
+
+.him-legal-note .him-btn {
+  margin-top: 1.15rem;
+}
+
+main:has(.him-legal) + .him-footer {
+  padding-top: 4.5rem;
+}
+
+@media (max-width: 900px) {
+  .him-legal {
+    padding-top: calc(18px + 128px);
+  }
+
+  .him-legal-lead {
+    max-width: none;
+  }
+
+  .him-legal-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .him-legal-side {
+    position: static;
   }
 }
 
